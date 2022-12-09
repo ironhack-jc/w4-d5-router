@@ -28,12 +28,12 @@ export default {
         async fetchProjects() {
             const response = await fetch(API_URL)
 
-            return await response.json()
+            this.projects = await response.json()
         }
     },
-    // mounted() {
-    // this.projects = this.fetchProjects()
-    // }
+    mounted() {
+        this.fetchProjects()
+    }
 }</script>
 <style scoped>
 div {

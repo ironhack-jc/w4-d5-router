@@ -9,6 +9,7 @@
     <div v-else style="background-color: red; color: black; font-size: 50px;">
         Project not found!
     </div>
+    <input type="text" v-model="username" placeholder="Username">
     <ListOfProjects />
 </template>
 <script>
@@ -21,7 +22,8 @@ export default {
     data() {
         return {
             // projectId: this.$route.params.projectId,
-            projects: PROJECTS
+            projects: PROJECTS,
+            username: null
         }
     },
     computed: {
@@ -34,6 +36,12 @@ export default {
             )
         }
     },
+    watch: {
+        username() {
+            // fetch the new data!
+            alert("you changed the username!")
+        }
+    }
 }
 
 </script>
